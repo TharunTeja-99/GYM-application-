@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Build and Deploy Java Application
+    name: Build and Deploy Java  Application
     runs-on: ubuntu-latest
 
 
