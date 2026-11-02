@@ -35,7 +35,7 @@ jobs:
           ls -lh target/
           test -f target/Gym-application.war
 
-      - name: Deploy WAR to Test Environment
+      - name: Deploy WAR to Test  Environment
         env:
           TOMCAT_HOST: ${{ secrets.TOMCAT_HOST }}
           TOMCAT_USER: ${{ secrets.TOMCAT_USER }}
