@@ -33,7 +33,7 @@ jobs:
       - name: Verify WAR File
         run: |
           ls -lh target/
-          test -f target/Gym-application
+          test -f target/Gym-application.war
 
       - name: Deploy WAR to Dev Environment
         env:
