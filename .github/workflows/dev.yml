@@ -43,7 +43,7 @@ jobs:
           curl --fail-with-body \
             --silent --show-error \
             --user "$TOMCAT_USER:$TOMCAT_PASSWORD" \
-            --upload-file target/Gym-application \
+            --upload-file target/Gym-application.war \
             "$TOMCAT_HOST/manager/text/deploy?path=/Gym-application&update=true"
 
       - name: Deployment Successful
