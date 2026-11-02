@@ -48,4 +48,4 @@ jobs:
             "$TOMCAT_HOST/manager/text/deploy?path=/Gym-application&update=true"
 
       - name: Deployment Successful
-        run: echo "WAR file deployed Successfully to test environment"
+        run: echo "WAR file Deployed Successfully to test environment"
