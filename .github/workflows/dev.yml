@@ -3,7 +3,7 @@ name: CI/CD for Dev Branch
 on:
   push:
     branches:
-      -Dev
+      -  Dev
 
   workflow_dispatch:
 
