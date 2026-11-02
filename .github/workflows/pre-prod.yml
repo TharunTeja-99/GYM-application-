@@ -1,0 +1,51 @@
+name: CI/CD for Pre-prod Branch
+
+on:
+  push:
+    branches:
+      -  Pre-prod
+
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy Java Application
+    runs-on: ubuntu-latest
+
+
+    environment:
+      name: Pre-prod
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set-up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Build WAR File
+        run: mvn -B clean verify
+
+      - name: Verify WAR File
+        run: |
+          ls -lh target/
+          test -f target/Gym-application.war
+
+      - name: Deploy WAR to Dev Environment
+        env:
+          TOMCAT_HOST: ${{ secrets.TOMCAT_HOST }}
+          TOMCAT_USER: ${{ secrets.TOMCAT_USER }}
+          TOMCAT_PASSWORD: ${{ secrets.TOMCAT_PASSWORD }}
+        run: |
+          curl --fail-with-body \
+            --silent --show-error \
+            --user "$TOMCAT_USER:$TOMCAT_PASSWORD" \
+            --upload-file target/Gym-application.war \
+            "$TOMCAT_HOST/manager/text/deploy?path=/Gym-application&update=true"
+
+      - name: Deployment Successful
+        run: echo "WAR file deployed successfully to Pre-prod environment"
