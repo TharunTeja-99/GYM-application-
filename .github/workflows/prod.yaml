@@ -3,7 +3,7 @@ name: CI/CD for Prod Branch
 on:
   push:
     branches:
-      - prod
+      - main
 
   workflow_dispatch:
 
