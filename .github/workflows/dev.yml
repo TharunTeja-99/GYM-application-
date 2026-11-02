@@ -1,0 +1,11 @@
+name:  ci for dev
+ on:
+   branches:
+     -Dev:
+
+       jobs:
+         Development:
+           runs-on:  ubuntu-latest
+           steps:
+             - name: 
+
