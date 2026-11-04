@@ -570,3 +570,22 @@ GitHub: [TharunTeja-99](https://github.com/TharunTeja-99)
 ### Project Summary
 
 This project demonstrates an automated build and deployment process for a Java-based Gym Application using Maven, GitHub Actions, Apache Tomcat, Git, and AWS EC2. The application is deployed independently across **DEV, TEST, PRE-PROD, and PROD**, supporting separated validation stages and controlled production releases.
+
+
+## Project Screenshots
+
+### 1. Gym Application UI
+![Gym Application UI](images/gym-application-ui.png)
+
+### 2. Maven WAR Build
+![Maven WAR Build](images/gym-application-war.png)
+
+### 3. Tomcat Deployment
+![Tomcat Deployment](images/tomcat-deploy.png)
+
+### 4. GitHub Actions Environment Workflows
+![Environment Workflows](images/Env-workflows.png)
+
+### 5. Production Deployment Workflow
+![Production YAML Workflow](images/Prod-yaml-file.png)
+
